@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet de web dev</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="d-flex flex-column">
+
+        <div class="bd-highlight d-flex justify-content-center">
+            <h1>Liste 1</h1>
+        </div>
+        <div class="d-flex flex-row " style="margin-left: 650px;">
+            <form action="/ajouter1" method="post">
+                <input type="text" class="saisieInput" name="tache" id="tache" autofocus>
+                <input type="submit" class="btn btn-primary" value="Ajouter">
+            </form>
+        </div>
+        <ul>
+            <% taches.forEach( (tache)=> { %>
+                <li>
+                    <%= tache.titre %>
+                        <form action="/supprimer" method="post">
+                            <input class="btn btn-outline-secondary m-1" type="hidden" name="id" id="id"
+                                value="<%= tache._id %>">
+                            <input class="btn btn-outline-secondary m-1" type="submit" value="Change"
+                                formaction="/terminer1">
+                            <input class="btn btn-outline-secondary m-1" type="submit" value="Supprimer">
+                        </form>
+                </li>
+                <hr />
+                <% }) %>
+
+        </ul>
+        <div class="bd-highlight d-flex justify-content-center">
+            <h1>Liste 2</h1>
+        </div>
+        <div class="d-flex flex-row " style="margin-left: 650px;">
+            <form action="/ajouter2" method="post">
+                <input type="text" class="saisieInput" name="liste2" id="liste2" autofocus>
+                <input type="submit" class="btn btn-primary" value="Ajouter">
+            </form>
+        </div>
+        <ul>
+            <% taches.forEach( (taches)=> { %>
+                <li>
+                    <%= taches.titre %>
+                        <form action="/supprimer" method="post">
+                            <input class="btn btn-outline-secondary m-1" type="hidden" name="id" id="id"
+                                value="<%= taches._id %>">
+                            <input class="btn btn-outline-secondary m-1" type="submit" value="Change"
+                                formaction="/terminer2">
+                            <input class="btn btn-outline-secondary m-1" type="submit" value="Supprimer">
+                        </form>
+                </li>
+                <hr />
+                <% }) %>
+
+        </ul>
+        <div class="bd-highlight d-flex justify-content-center">
+            <h1>Liste 3</h1>
+        </div>
+        <div class="d-flex flex-row " style="margin-left: 650px;">
+            <form action="/ajouter3" method="post">
+                <input type="text" class="saisieInput" name="taches" id="taches" autofocus>
+                <input type="submit" class="btn btn-primary" value="Ajouter">
+            </form>
+        </div>
+        <ul>
+            <% taches.forEach( (taches)=> { %>
+                <li>
+                    <%= taches.titre %>
+                        <form action="/supprimer" method="post">
+                            <input class="btn btn-outline-secondary m-1" type="hidden" name="id" id="id"
+                                value="<%= taches._id %>">
+                            <input class="btn btn-outline-secondary m-1" type="submit" value="Change"
+                                formaction="/terminer3">
+                            <input class="btn btn-outline-secondary m-1" type="submit" value="Supprimer">
+                        </form>
+                </li>
+                <hr />
+                <% }) %>
+
+        </ul>
+
+
+    </div>
+
+</body>
+
+</html>
